@@ -179,10 +179,10 @@ export default function AiTutorPage() {
               key={chip.id}
               type="button"
               onClick={() => setSelectedAction(chip.id)}
-              className={`px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition border ${
+              className={`px-3.5 py-1.5 rounded-xl text-xs font-black uppercase tracking-wider whitespace-nowrap transition-all border ${
                 isSelected
-                  ? 'bg-purple-600 border-purple-400 text-white shadow-md shadow-purple-900/40'
-                  : 'bg-slate-900/80 border-slate-800 text-slate-400 hover:text-slate-200 hover:border-slate-700'
+                  ? 'bg-gradient-to-r from-purple-600 to-indigo-600 border-purple-400 text-white shadow-md shadow-purple-950/70 scale-[1.03]'
+                  : 'bg-slate-950/80 border-indigo-950 text-slate-400 hover:text-cyan-300 hover:border-cyan-500/40'
               }`}
             >
               {chip.label}
@@ -192,7 +192,7 @@ export default function AiTutorPage() {
       </div>
 
       {/* Chat Messages Container */}
-      <div className="flex-1 overflow-y-auto rounded-3xl bg-[#0b0e27]/80 border border-indigo-900/40 p-4 sm:p-6 space-y-4 shadow-inner">
+      <div className="flex-1 overflow-y-auto rounded-3xl glass-panel hud-corner p-4 sm:p-6 space-y-4 shadow-inner">
         {messages.map((msg) => {
           const isUser = msg.sender === 'user';
 
@@ -202,7 +202,7 @@ export default function AiTutorPage() {
               className={`flex items-start gap-3 ${isUser ? 'flex-row-reverse' : 'flex-row'}`}
             >
               <div className={`w-8 h-8 rounded-full border flex items-center justify-center shrink-0 ${
-                isUser ? 'bg-purple-600 border-purple-400 text-white' : 'bg-cyan-950 border-cyan-500 text-cyan-300'
+                isUser ? 'bg-gradient-to-tr from-purple-600 to-indigo-500 border-purple-400 text-white shadow-md shadow-purple-900/50' : 'bg-[#0d1235] border-cyan-400 text-cyan-300 shadow-md shadow-cyan-900/50'
               }`}>
                 {isUser ? <User className="w-4 h-4" /> : <Bot className="w-4 h-4" />}
               </div>
@@ -210,8 +210,8 @@ export default function AiTutorPage() {
               <div
                 className={`max-w-2xl rounded-3xl p-4 sm:p-5 text-sm space-y-2 leading-relaxed ${
                   isUser
-                    ? 'bg-purple-950/60 border border-purple-700/50 text-white'
-                    : 'bg-[#101435] border border-indigo-800/40 text-slate-200'
+                    ? 'bg-purple-950/60 border border-purple-600/40 text-white shadow-md'
+                    : 'bg-[#0e1338]/90 border border-indigo-500/30 text-slate-200 shadow-md'
                 }`}
               >
                 {/* Image attachment in chat bubble if present */}
@@ -267,7 +267,7 @@ export default function AiTutorPage() {
       )}
 
       {/* Chat Input Bar */}
-      <div className="p-3 rounded-2xl bg-[#0d1029]/90 border border-indigo-900/50 flex items-center gap-2 shrink-0">
+      <div className="p-3 rounded-2xl glass-panel flex items-center gap-2 shrink-0">
         {/* Hidden File Input */}
         <input
           type="file"

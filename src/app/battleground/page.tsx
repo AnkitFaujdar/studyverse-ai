@@ -195,38 +195,38 @@ export default function BattlegroundPage() {
       {stage === 'lobby' && (
         <div className="space-y-6">
           {/* Battle Rating Banner */}
-          <div className="p-6 rounded-3xl bg-gradient-to-r from-rose-950/40 via-[#161033] to-[#0a1532] border border-rose-600/40 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="p-6 rounded-3xl glass-panel hud-corner flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-4">
-              <div className="p-3.5 rounded-2xl bg-rose-600/20 border border-rose-500/50 text-rose-400">
-                <Trophy className="w-8 h-8" />
+              <div className="p-3.5 rounded-2xl bg-gradient-to-tr from-amber-500/20 to-yellow-500/10 border border-amber-500/40 text-amber-400 shadow-lg shadow-amber-500/20">
+                <Trophy className="w-8 h-8 text-yellow-400" />
               </div>
               <div>
-                <span className="text-[10px] font-black uppercase tracking-widest text-rose-400">
-                  SEPARATE COMPETITIVE ELO
+                <span className="text-[10px] font-black uppercase tracking-widest text-gradient-gold">
+                  SEPARATE COMPETITIVE RATING
                 </span>
                 <h2 className="text-3xl font-black text-white">
-                  Rating: {profile.battleRating}
+                  Rating: <span className="text-gradient-gold">{profile.battleRating} ELO</span>
                 </h2>
-                <p className="text-xs text-slate-400">Tier: Gold Scholar Division</p>
+                <p className="text-xs text-slate-400">Tier: <strong className="text-amber-400">Gold Scholar Division</strong></p>
               </div>
             </div>
 
             <div className="text-center sm:text-right text-xs text-slate-400">
               <span className="block font-semibold text-slate-300">PvP Matchmaking:</span>
-              <span>Fast AI Challenger Engine Ready</span>
+              <span className="text-cyan-400 font-bold">Fast AI Challenger Engine Ready</span>
             </div>
           </div>
 
           {/* Battle Modes */}
           <div className="grid sm:grid-cols-3 gap-5">
             {/* Mode 1: Quick */}
-            <div className="p-6 rounded-3xl bg-[#0e1230]/90 border border-indigo-800/40 hover:border-purple-500/50 flex flex-col justify-between space-y-4 shadow-xl transition">
+            <div className="p-6 rounded-3xl cyber-card flex flex-col justify-between space-y-4">
               <div>
                 <div className="flex justify-between items-start">
-                  <span className="text-xs font-bold px-2.5 py-0.5 rounded-full bg-purple-950 text-purple-300 border border-purple-800">
+                  <span className="text-xs font-bold px-2.5 py-0.5 rounded-full bg-purple-950/80 text-purple-300 border border-purple-700/60">
                     Fast Pace
                   </span>
-                  <span className="text-xs font-mono text-cyan-400">10 Qs</span>
+                  <span className="text-xs font-mono font-bold text-cyan-400">10 Qs</span>
                 </div>
                 <h3 className="text-lg font-black text-white mt-3">Quick Battle</h3>
                 <p className="text-xs text-slate-400 leading-relaxed mt-1">
@@ -234,15 +234,15 @@ export default function BattlegroundPage() {
                 </p>
               </div>
 
-              <div className="space-y-2 pt-2 border-t border-slate-800">
+              <div className="space-y-2 pt-2 border-t border-indigo-900/40">
                 <div className="flex justify-between text-xs text-slate-400">
                   <span>Win Reward:</span>
-                  <span className="font-bold text-white">+150 XP • +24 Rating</span>
+                  <span className="font-bold text-gradient-cyber">+150 XP • +24 Rating</span>
                 </div>
                 <button
                   type="button"
                   onClick={() => handleStartBattle('quick_10')}
-                  className="w-full py-3 rounded-2xl font-bold text-xs text-white bg-purple-600 hover:bg-purple-500 transition active:scale-95"
+                  className="w-full py-3 rounded-2xl font-black text-xs text-white bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 shadow-lg shadow-purple-950/60 transition active:scale-95"
                 >
                   Enter Quick Battle
                 </button>
@@ -250,13 +250,13 @@ export default function BattlegroundPage() {
             </div>
 
             {/* Mode 2: Standard */}
-            <div className="p-6 rounded-3xl bg-[#0e1230]/90 border border-indigo-800/40 hover:border-cyan-500/50 flex flex-col justify-between space-y-4 shadow-xl transition">
+            <div className="p-6 rounded-3xl cyber-card flex flex-col justify-between space-y-4">
               <div>
                 <div className="flex justify-between items-start">
-                  <span className="text-xs font-bold px-2.5 py-0.5 rounded-full bg-cyan-950 text-cyan-300 border border-cyan-800">
+                  <span className="text-xs font-bold px-2.5 py-0.5 rounded-full bg-cyan-950/80 text-cyan-300 border border-cyan-700/60">
                     Championship
                   </span>
-                  <span className="text-xs font-mono text-cyan-400">30 Qs</span>
+                  <span className="text-xs font-mono font-bold text-cyan-400">30 Qs</span>
                 </div>
                 <h3 className="text-lg font-black text-white mt-3">Standard Battle</h3>
                 <p className="text-xs text-slate-400 leading-relaxed mt-1">
@@ -264,15 +264,15 @@ export default function BattlegroundPage() {
                 </p>
               </div>
 
-              <div className="space-y-2 pt-2 border-t border-slate-800">
+              <div className="space-y-2 pt-2 border-t border-indigo-900/40">
                 <div className="flex justify-between text-xs text-slate-400">
                   <span>Win Reward:</span>
-                  <span className="font-bold text-white">+300 XP • +32 Rating</span>
+                  <span className="font-bold text-gradient-cyber">+300 XP • +32 Rating</span>
                 </div>
                 <button
                   type="button"
                   onClick={() => handleStartBattle('standard_30')}
-                  className="w-full py-3 rounded-2xl font-bold text-xs text-white bg-cyan-600 hover:bg-cyan-500 transition active:scale-95"
+                  className="w-full py-3 rounded-2xl font-black text-xs text-white bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 shadow-lg shadow-cyan-950/60 transition active:scale-95"
                 >
                   Enter Standard Battle
                 </button>
@@ -280,16 +280,16 @@ export default function BattlegroundPage() {
             </div>
 
             {/* Mode 3: Boss */}
-            <div className="p-6 rounded-3xl bg-gradient-to-b from-[#18112c] to-[#0e1026] border border-rose-600/40 hover:border-rose-500 flex flex-col justify-between space-y-4 shadow-xl transition">
+            <div className="p-6 rounded-3xl cyber-card border-rose-500/40 hover:border-rose-400 flex flex-col justify-between space-y-4">
               <div>
                 <div className="flex justify-between items-start">
-                  <span className="text-xs font-bold px-2.5 py-0.5 rounded-full bg-rose-950 text-rose-300 border border-rose-800">
+                  <span className="text-xs font-bold px-2.5 py-0.5 rounded-full bg-rose-950/80 text-rose-300 border border-rose-700/60">
                     Apex Boss
                   </span>
-                  <span className="text-xs font-mono text-rose-400">50 Qs</span>
+                  <span className="text-xs font-mono font-bold text-rose-400">50 Qs</span>
                 </div>
                 <h3 className="text-lg font-black text-white mt-3 flex items-center gap-2">
-                  <Crown className="w-5 h-5 text-yellow-400" />
+                  <Crown className="w-5 h-5 text-yellow-400 animate-bounce" />
                   <span>Grand Proctor Boss</span>
                 </h3>
                 <p className="text-xs text-slate-400 leading-relaxed mt-1">
@@ -297,15 +297,15 @@ export default function BattlegroundPage() {
                 </p>
               </div>
 
-              <div className="space-y-2 pt-2 border-t border-slate-800">
+              <div className="space-y-2 pt-2 border-t border-rose-900/40">
                 <div className="flex justify-between text-xs text-slate-400">
                   <span>Win Reward:</span>
-                  <span className="font-bold text-yellow-400">+600 XP • +50 Rating</span>
+                  <span className="font-bold text-gradient-gold">+600 XP • +50 Rating</span>
                 </div>
                 <button
                   type="button"
                   onClick={() => handleStartBattle('boss_50')}
-                  className="w-full py-3 rounded-2xl font-bold text-xs text-white bg-gradient-to-r from-rose-600 to-purple-600 hover:from-rose-500 hover:to-purple-500 transition active:scale-95"
+                  className="w-full py-3 rounded-2xl font-black text-xs text-white bg-gradient-to-r from-rose-600 to-purple-600 hover:from-rose-500 hover:to-purple-500 shadow-lg shadow-rose-950/60 transition active:scale-95"
                 >
                   Challenge Boss AI
                 </button>

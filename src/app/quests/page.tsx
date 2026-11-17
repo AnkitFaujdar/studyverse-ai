@@ -143,15 +143,15 @@ export default function QuestsPage() {
       </div>
 
       {/* Filter Tabs & Subject Filter */}
-      <div className="flex flex-wrap items-center justify-between gap-3 p-3 rounded-2xl bg-[#0d1029]/80 border border-indigo-900/40">
-        <div className="flex items-center gap-1 bg-slate-900/80 p-1 rounded-xl border border-slate-800">
+      <div className="flex flex-wrap items-center justify-between gap-3 p-4 rounded-2xl glass-panel hud-corner">
+        <div className="flex items-center gap-1 bg-slate-950/80 p-1.5 rounded-xl border border-indigo-950">
           {(['all', 'pending', 'completed'] as const).map((tab) => (
             <button
               key={tab}
               onClick={() => setFilterTab(tab)}
-              className={`px-3 py-1.5 rounded-lg text-xs font-bold uppercase transition ${
+              className={`px-3.5 py-1.5 rounded-lg text-xs font-black uppercase tracking-wider transition ${
                 filterTab === tab
-                  ? 'bg-purple-600 text-white shadow-sm'
+                  ? 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-md shadow-purple-950/80'
                   : 'text-slate-400 hover:text-white'
               }`}
             >
@@ -161,11 +161,11 @@ export default function QuestsPage() {
         </div>
 
         <div className="flex items-center gap-2">
-          <Filter className="w-4 h-4 text-slate-400" />
+          <Filter className="w-4 h-4 text-cyan-400" />
           <select
             value={subjectFilter}
             onChange={(e) => setSubjectFilter(e.target.value)}
-            className="rounded-xl bg-slate-900 border border-slate-700/80 px-3 py-1.5 text-xs text-white focus:outline-none focus:border-purple-500"
+            className="rounded-xl bg-slate-950/90 border border-indigo-900/60 px-3.5 py-2 text-xs text-white focus:outline-none focus:border-cyan-400"
           >
             <option value="All">All Subjects</option>
             {subjectsList.map((s) => (
@@ -176,9 +176,9 @@ export default function QuestsPage() {
       </div>
 
       {/* Quests List */}
-      <div className="grid gap-3">
+      <div className="grid gap-3.5">
         {filteredQuests.length === 0 ? (
-          <div className="text-center py-16 rounded-3xl bg-[#0d1029]/50 border border-slate-800/80 space-y-3">
+          <div className="text-center py-16 rounded-3xl glass-panel space-y-3">
             <Swords className="w-12 h-12 text-slate-600 mx-auto" />
             <p className="text-sm font-bold text-slate-300">No quests found in this category.</p>
             <p className="text-xs text-slate-500">Click &ldquo;Forge New Quest&rdquo; to create your first objective!</p>
@@ -193,10 +193,10 @@ export default function QuestsPage() {
                 layout
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className={`p-5 rounded-3xl border transition relative flex flex-col md:flex-row md:items-center justify-between gap-4 ${
+                className={`p-5 rounded-3xl transition relative flex flex-col md:flex-row md:items-center justify-between gap-4 ${
                   isCompleted
-                    ? 'bg-slate-950/40 border-slate-800/80 opacity-75'
-                    : 'bg-[#0e122e]/80 border-indigo-900/40 hover:border-purple-500/50 shadow-lg'
+                    ? 'bg-slate-950/40 border border-slate-800/80 opacity-75'
+                    : 'cyber-card'
                 }`}
               >
                 <div className="flex items-start gap-4 min-w-0">

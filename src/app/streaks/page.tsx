@@ -57,7 +57,7 @@ export default function StreaksPage() {
       </div>
 
       {/* Hero Streak Flame Banner */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-orange-950/60 via-[#130f2b] to-[#090b21] p-8 border border-orange-600/40 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6">
+      <div className="relative overflow-hidden rounded-3xl glass-panel hud-corner border-orange-500/40 p-8 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="flex items-center gap-6">
           <div className="relative flex h-24 w-24 items-center justify-center rounded-3xl bg-gradient-to-tr from-orange-600 to-amber-400 p-1 shadow-xl shadow-orange-600/40 animate-pulse">
             <div className="flex h-full w-full items-center justify-center rounded-[22px] bg-[#0c1026]">
@@ -101,7 +101,7 @@ export default function StreaksPage() {
 
         <div className="grid sm:grid-cols-3 gap-4">
           {/* 7 Days Reward */}
-          <div className="p-5 rounded-3xl bg-[#0d1029]/80 border border-indigo-900/40 flex flex-col justify-between space-y-4">
+          <div className="p-5 rounded-3xl cyber-card flex flex-col justify-between space-y-4">
             <div className="flex items-start justify-between">
               <div className="p-3 rounded-2xl bg-purple-950/80 border border-purple-800/40 text-purple-400">
                 <Award className="w-6 h-6" />
@@ -125,7 +125,7 @@ export default function StreaksPage() {
           </div>
 
           {/* 14 Days Reward */}
-          <div className="p-5 rounded-3xl bg-[#0d1029]/80 border border-indigo-900/40 flex flex-col justify-between space-y-4">
+          <div className="p-5 rounded-3xl cyber-card flex flex-col justify-between space-y-4">
             <div className="flex items-start justify-between">
               <div className="p-3 rounded-2xl bg-amber-950/80 border border-amber-800/40 text-yellow-400">
                 <Coins className="w-6 h-6" />
@@ -158,7 +158,7 @@ export default function StreaksPage() {
           </div>
 
           {/* 30 Days Reward */}
-          <div className="p-5 rounded-3xl bg-[#0d1029]/80 border border-indigo-900/40 flex flex-col justify-between space-y-4">
+          <div className="p-5 rounded-3xl cyber-card flex flex-col justify-between space-y-4">
             <div className="flex items-start justify-between">
               <div className="p-3 rounded-2xl bg-cyan-950/80 border border-cyan-800/40 text-cyan-400">
                 <Palette className="w-6 h-6" />

@@ -72,10 +72,10 @@ export default function AchievementsPage() {
           return (
             <div
               key={ach.id}
-              className={`p-5 rounded-3xl border flex flex-col justify-between space-y-4 shadow-xl transition relative overflow-hidden ${
+              className={`p-5 rounded-3xl flex flex-col justify-between space-y-4 shadow-xl transition relative overflow-hidden ${
                 ach.isUnlocked
-                  ? 'bg-gradient-to-b from-[#151238] to-[#0c0e24] border-purple-500/40'
-                  : 'bg-[#0a0c1e]/60 border-slate-800/80 opacity-60'
+                  ? 'cyber-card'
+                  : 'bg-slate-950/50 border border-slate-900 opacity-60'
               }`}
             >
               <div>

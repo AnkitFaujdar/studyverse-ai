@@ -229,7 +229,7 @@ export default function GuildsPage() {
             return (
               <div
                 key={g.id}
-                className="p-5 rounded-3xl bg-[#0e122e]/80 border border-indigo-900/40 hover:border-purple-500/50 flex flex-col justify-between space-y-4 transition"
+                className="p-5 rounded-3xl cyber-card flex flex-col justify-between space-y-4"
               >
                 <div>
                   <div className="flex justify-between items-start">

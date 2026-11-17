@@ -89,7 +89,7 @@ export default function RewardShopPage() {
           return (
             <div
               key={item.id}
-              className="p-5 rounded-3xl bg-[#0e1230]/90 border border-indigo-900/40 hover:border-purple-500/50 flex flex-col justify-between space-y-4 shadow-xl transition"
+              className="p-5 rounded-3xl cyber-card flex flex-col justify-between space-y-4"
             >
               <div>
                 <div className="flex items-start justify-between">

@@ -226,8 +226,8 @@ export default function FocusTimerPage() {
 
       {/* Preset Selector */}
       {!isActive && (
-        <div className="p-4 rounded-3xl bg-[#0d1029]/80 border border-indigo-900/40 space-y-3">
-          <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">
+        <div className="p-5 rounded-3xl glass-panel hud-corner space-y-3">
+          <span className="text-xs font-bold text-gradient-cyber uppercase tracking-wider">
             Choose Sprint Duration
           </span>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -235,14 +235,14 @@ export default function FocusTimerPage() {
               <button
                 key={mins}
                 onClick={() => handleSelectPreset(mins)}
-                className={`py-3 px-4 rounded-2xl border font-bold text-sm transition text-center ${
+                className={`py-3.5 px-4 rounded-2xl border font-bold text-sm transition-all text-center ${
                   selectedMinutes === mins && !isCustom
-                    ? 'bg-purple-900/50 border-purple-500 text-white shadow-lg shadow-purple-950/60'
-                    : 'bg-slate-950/60 border-slate-800 text-slate-300 hover:border-slate-700'
+                    ? 'bg-gradient-to-r from-purple-600/40 to-indigo-600/30 border-purple-400 text-white shadow-lg shadow-purple-950/80 scale-[1.02]'
+                    : 'bg-slate-950/60 border-slate-800/80 text-slate-300 hover:border-slate-700 hover:bg-slate-900/60'
                 }`}
               >
                 <div>{mins} Minutes</div>
-                <div className="text-[10px] text-cyan-400 font-semibold mt-0.5">+{mins * 2} XP</div>
+                <div className="text-[10px] text-cyan-400 font-extrabold mt-0.5">+{mins * 2} XP</div>
               </button>
             ))}
 
@@ -272,14 +272,14 @@ export default function FocusTimerPage() {
 
       {/* Setup Pre-Study Context */}
       {!isActive && (
-        <div className="grid sm:grid-cols-3 gap-3 p-4 rounded-3xl bg-[#0d1029]/80 border border-indigo-900/40">
+        <div className="grid sm:grid-cols-3 gap-3 p-5 rounded-3xl glass-panel">
           <div>
             <label className="block text-xs font-semibold text-slate-300 mb-1">Subject</label>
             <input
               type="text"
               value={selectedSubject}
               onChange={(e) => setSelectedSubject(e.target.value)}
-              className="w-full rounded-xl bg-slate-950/70 border border-slate-700/80 px-3 py-2 text-xs text-white focus:outline-none focus:border-purple-500"
+              className="w-full rounded-xl bg-slate-950/80 border border-indigo-900/60 px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition"
             />
           </div>
 
@@ -289,7 +289,7 @@ export default function FocusTimerPage() {
               type="text"
               value={selectedChapter}
               onChange={(e) => setSelectedChapter(e.target.value)}
-              className="w-full rounded-xl bg-slate-950/70 border border-slate-700/80 px-3 py-2 text-xs text-white focus:outline-none focus:border-purple-500"
+              className="w-full rounded-xl bg-slate-950/80 border border-indigo-900/60 px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition"
             />
           </div>
 
@@ -298,7 +298,7 @@ export default function FocusTimerPage() {
             <select
               value={selectedQuestId}
               onChange={(e) => setSelectedQuestId(e.target.value)}
-              className="w-full rounded-xl bg-slate-950/70 border border-slate-700/80 px-3 py-2 text-xs text-white focus:outline-none focus:border-purple-500"
+              className="w-full rounded-xl bg-slate-950/80 border border-indigo-900/60 px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-purple-400 transition"
             >
               <option value="">None / Freestyle Study</option>
               {quests.filter((q) => q.status === 'pending').map((q) => (
@@ -340,22 +340,22 @@ export default function FocusTimerPage() {
       {/* ========================================================================= */}
       {/* MAIN CYBERPUNK TIMER DISPLAY */}
       {/* ========================================================================= */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-b from-[#101333] via-[#090b1e] to-[#050714] p-8 sm:p-12 border border-purple-500/30 text-center shadow-2xl flex flex-col items-center justify-center">
+      <div className="relative overflow-hidden rounded-3xl glass-panel hud-corner p-8 sm:p-12 border-2 border-purple-500/30 text-center shadow-2xl flex flex-col items-center justify-center">
         {/* Glowing Background Radial */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-900/15 via-transparent to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-900/25 via-indigo-950/10 to-transparent pointer-events-none" />
 
         {/* Current Target Header */}
         <div className="mb-6 z-10">
-          <span className="text-xs font-extrabold uppercase tracking-widest text-purple-400 block">
+          <span className="text-xs font-extrabold uppercase tracking-widest text-gradient-cyber block">
             {selectedSubject}
           </span>
-          <h2 className="text-lg sm:text-xl font-black text-white mt-0.5">
+          <h2 className="text-xl sm:text-2xl font-black text-white mt-0.5">
             {selectedChapter}
           </h2>
           {isActive && (
-            <div className="inline-flex items-center gap-1.5 mt-2 px-3 py-1 rounded-full bg-slate-900/80 border border-slate-700/60 text-[11px] text-slate-300">
-              <span className="h-2 w-2 rounded-full bg-emerald-400 animate-ping" />
-              <span>Session In Progress • Interrupts: {interruptionCount}</span>
+            <div className="inline-flex items-center gap-2 mt-2 px-3.5 py-1 rounded-full bg-slate-900/90 border border-cyan-500/40 text-[11px] text-cyan-300 shadow-md shadow-cyan-950/50">
+              <span className="h-2 w-2 rounded-full bg-cyan-400 animate-ping" />
+              <span>Chrono Lock Active • Interrupted: {interruptionCount}x</span>
             </div>
           )}
         </div>

@@ -144,7 +144,7 @@ export default function StudyShopPage() {
         {filteredProducts.map((prod) => (
           <div
             key={prod.id}
-            className="rounded-3xl bg-[#0e1230]/90 border border-indigo-900/40 hover:border-purple-500/50 overflow-hidden flex flex-col justify-between shadow-xl transition group"
+            className="rounded-3xl cyber-card overflow-hidden flex flex-col justify-between group"
           >
             {/* Product Image */}
             <div

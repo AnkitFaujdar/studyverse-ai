@@ -85,7 +85,7 @@ export default function PreparationPage() {
           return (
             <div
               key={subject.id}
-              className="p-6 rounded-3xl bg-[#0d1029]/90 border border-indigo-900/40 space-y-5 shadow-xl"
+              className="p-6 rounded-3xl glass-panel hud-corner space-y-5"
             >
               {/* Subject Title & Bar */}
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-800">
@@ -128,7 +128,7 @@ export default function PreparationPage() {
                   return (
                     <div
                       key={chapter.id}
-                      className="p-4 rounded-2xl bg-slate-950/60 border border-slate-800/80 hover:border-slate-700 transition flex flex-col md:flex-row md:items-center justify-between gap-4"
+                      className="p-4 rounded-2xl cyber-card flex flex-col md:flex-row md:items-center justify-between gap-4"
                     >
                       <div className="space-y-1 min-w-0">
                         <div className="flex flex-wrap items-center gap-2">

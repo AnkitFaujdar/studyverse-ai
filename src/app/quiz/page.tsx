@@ -169,32 +169,32 @@ export default function QuizPage() {
           </div>
 
           {/* Config Tabs */}
-          <div className="flex gap-2 p-1.5 rounded-2xl bg-[#0d1029]/80 border border-indigo-900/40 max-w-md">
+          <div className="flex gap-2 p-1.5 rounded-2xl glass-panel max-w-md">
             <button
               onClick={() => setConfigTab('chapter')}
-              className={`flex-1 py-2.5 px-4 rounded-xl text-xs font-bold transition text-center ${
+              className={`flex-1 py-2.5 px-4 rounded-xl text-xs font-black uppercase tracking-wider transition text-center ${
                 configTab === 'chapter'
-                  ? 'bg-purple-600 text-white shadow-sm shadow-purple-900/40'
+                  ? 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-md shadow-purple-900/60'
                   : 'text-slate-400 hover:text-white'
               }`}
             >
-              Chapter-Specific Quiz
+              Chapter Trial
             </button>
             <button
               onClick={() => setConfigTab('completed')}
-              className={`flex-1 py-2.5 px-4 rounded-xl text-xs font-bold transition text-center ${
+              className={`flex-1 py-2.5 px-4 rounded-xl text-xs font-black uppercase tracking-wider transition text-center ${
                 configTab === 'completed'
-                  ? 'bg-cyan-600 text-white shadow-sm shadow-cyan-900/40'
+                  ? 'bg-gradient-to-r from-cyan-600 to-blue-600 text-white shadow-md shadow-cyan-900/60'
                   : 'text-slate-400 hover:text-white'
               }`}
             >
-              From Completed Chapters
+              Mastery Blitz
             </button>
           </div>
 
           {/* CHAPTER SPECIFIC QUIZ */}
           {configTab === 'chapter' && (
-            <div className="p-6 sm:p-8 rounded-3xl bg-[#0d1029]/90 border border-indigo-900/40 space-y-6 max-w-3xl">
+            <div className="p-6 sm:p-8 rounded-3xl glass-panel hud-corner space-y-6 max-w-3xl">
               <h2 className="text-base font-bold text-white">Configure Chapter Challenge</h2>
 
               <div className="grid sm:grid-cols-2 gap-4">

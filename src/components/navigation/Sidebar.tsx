@@ -69,35 +69,35 @@ export const Sidebar: React.FC = () => {
   const levelProgress = getLevelProgress(profile.currentXp);
 
   return (
-    <aside className="hidden lg:flex flex-col w-64 h-screen fixed left-0 top-0 bg-[#080b1e]/90 border-r border-indigo-900/30 backdrop-blur-xl z-40 overflow-y-auto scrollbar-thin scrollbar-thumb-purple-900/50">
+    <aside className="hidden lg:flex flex-col w-64 h-screen fixed left-0 top-0 bg-[#060814]/90 border-r border-indigo-500/20 backdrop-blur-2xl z-40 overflow-y-auto scrollbar-thin scrollbar-thumb-purple-900/50">
       {/* Brand Logo */}
       <div className="p-5 border-b border-indigo-900/30 flex items-center justify-between">
-        <Link href="/dashboard" className="flex items-center gap-2.5">
-          <div className="h-9 w-9 rounded-xl bg-gradient-to-tr from-purple-600 via-indigo-600 to-cyan-400 p-0.5 shadow-lg shadow-purple-600/30">
+        <Link href="/dashboard" className="flex items-center gap-2.5 group">
+          <div className="h-10 w-10 rounded-xl bg-gradient-to-tr from-purple-600 via-indigo-600 to-cyan-400 p-0.5 shadow-lg shadow-purple-600/30 group-hover:shadow-cyan-500/40 transition duration-300">
             <div className="h-full w-full rounded-[10px] bg-[#0c1026] flex items-center justify-center">
-              <Sparkles className="w-5 h-5 text-cyan-400 animate-pulse" />
+              <Sparkles className="w-5 h-5 text-cyan-400 group-hover:scale-110 transition-transform duration-300" />
             </div>
           </div>
           <div>
             <span className="font-black text-lg tracking-wider text-white">STUDYVERSE</span>
-            <span className="text-[10px] font-bold text-cyan-400 block tracking-widest -mt-1">AI EXPEDITION</span>
+            <span className="text-[10px] font-bold text-gradient-cyber block tracking-widest -mt-1">AI EXPEDITION</span>
           </div>
         </Link>
       </div>
 
       {/* User Progress Mini Badge */}
-      <div className="p-4 mx-3 my-3 rounded-2xl bg-gradient-to-b from-[#141838] to-[#0f122d] border border-indigo-700/30 shadow-inner">
+      <div className="p-4 mx-3 my-3 rounded-2xl glass-panel hud-corner shadow-lg">
         <div className="flex items-center gap-3 mb-2.5">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={profile.avatarUrl}
             alt={profile.fullName}
-            className="w-10 h-10 rounded-full border border-purple-500/50 object-cover"
+            className="w-10 h-10 rounded-full border-2 border-purple-500/70 shadow-md shadow-purple-950/80 object-cover"
           />
           <div className="flex-1 min-w-0">
-            <p className="text-xs font-semibold text-white truncate">{profile.fullName}</p>
+            <p className="text-xs font-bold text-white truncate">{profile.fullName}</p>
             <div className="flex items-center gap-1.5">
-              <span className="text-[11px] font-bold text-purple-300">Lv {profile.currentLevel}</span>
+              <span className="text-[11px] font-black text-gradient-gold">Lv {profile.currentLevel}</span>
               <span className="text-[10px] text-slate-400 truncate">{levelProgress.currentLevel.title}</span>
             </div>
           </div>
@@ -106,12 +106,12 @@ export const Sidebar: React.FC = () => {
         {/* Mini XP Bar */}
         <div className="space-y-1">
           <div className="flex justify-between text-[10px] text-slate-400 font-medium">
-            <span>XP Progress</span>
-            <span className="text-cyan-300 font-semibold">{profile.currentXp} XP</span>
+            <span className="uppercase tracking-wider text-[9px] text-slate-400">EXP GAUGE</span>
+            <span className="text-cyan-300 font-bold">{profile.currentXp} XP</span>
           </div>
-          <div className="h-2 w-full bg-slate-800 rounded-full overflow-hidden p-0.5 border border-slate-700">
+          <div className="h-2 w-full bg-slate-950/80 rounded-full overflow-hidden p-0.5 border border-indigo-900/60 shadow-inner">
             <div
-              className="h-full rounded-full bg-gradient-to-r from-purple-500 via-indigo-500 to-cyan-400 transition-all duration-500"
+              className="h-full rounded-full xp-shimmer transition-all duration-500"
               style={{ width: `${levelProgress.percentage}%` }}
             />
           </div>
@@ -122,7 +122,7 @@ export const Sidebar: React.FC = () => {
       <div className="flex-1 px-3 py-2 space-y-5">
         {NAV_GROUPS.map((group) => (
           <div key={group.title} className="space-y-1">
-            <h4 className="px-3 text-[10px] font-extrabold uppercase tracking-wider text-slate-400">
+            <h4 className="px-3 text-[10px] font-extrabold uppercase tracking-widest text-slate-400">
               {group.title}
             </h4>
             {group.items.map((item) => {
@@ -132,14 +132,17 @@ export const Sidebar: React.FC = () => {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`flex items-center gap-3 px-3 py-2 rounded-xl text-xs font-semibold transition-all duration-150 ${
+                  className={`flex items-center gap-3 px-3 py-2 rounded-xl text-xs font-semibold transition-all duration-200 relative group ${
                     isActive
-                      ? 'bg-gradient-to-r from-purple-600/30 to-indigo-600/20 text-white border border-purple-500/30 shadow-sm shadow-purple-950/60'
-                      : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/40'
+                      ? 'bg-gradient-to-r from-purple-600/35 via-indigo-600/25 to-cyan-500/10 text-white border border-purple-500/40 shadow-md shadow-purple-950/70'
+                      : 'text-slate-400 hover:text-white hover:bg-slate-800/40 hover:border-slate-700/50 border border-transparent'
                   }`}
                 >
-                  <Icon className={`w-4 h-4 ${isActive ? 'text-purple-400' : 'text-slate-400'}`} />
-                  <span>{item.name}</span>
+                  {isActive && (
+                    <span className="absolute left-0 top-1.5 bottom-1.5 w-1 rounded-r-full bg-gradient-to-b from-purple-400 to-cyan-400 shadow-[0_0_8px_#38bdf8]" />
+                  )}
+                  <Icon className={`w-4 h-4 transition-transform duration-200 group-hover:scale-110 ${isActive ? 'text-cyan-400 drop-shadow-[0_0_6px_rgba(6,182,212,0.6)]' : 'text-slate-400'}`} />
+                  <span className={isActive ? 'font-bold text-white' : ''}>{item.name}</span>
                 </Link>
               );
             })}
@@ -148,10 +151,10 @@ export const Sidebar: React.FC = () => {
       </div>
 
       {/* Profile & Logout Footer */}
-      <div className="p-3 border-t border-indigo-900/30 flex items-center justify-between">
+      <div className="p-3 border-t border-indigo-900/40 flex items-center justify-between bg-[#04060e]/60">
         <Link
           href="/profile"
-          className="flex items-center gap-2 text-xs font-semibold text-slate-300 hover:text-white px-2 py-1.5 rounded-lg hover:bg-slate-800/50 transition"
+          className="flex items-center gap-2 text-xs font-semibold text-slate-300 hover:text-cyan-300 px-2.5 py-1.5 rounded-lg hover:bg-slate-800/50 transition"
         >
           <User className="w-4 h-4 text-slate-400" />
           <span>Profile & Settings</span>
@@ -159,7 +162,7 @@ export const Sidebar: React.FC = () => {
         <button
           onClick={logout}
           title="Sign Out"
-          className="p-1.5 text-slate-400 hover:text-rose-400 hover:bg-slate-800/50 rounded-lg transition"
+          className="p-1.5 text-slate-400 hover:text-rose-400 hover:bg-rose-950/40 rounded-lg transition"
         >
           <LogOut className="w-4 h-4" />
         </button>

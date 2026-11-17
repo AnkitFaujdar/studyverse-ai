@@ -88,7 +88,7 @@ export default function LeaderboardPage() {
 
         {/* Rank 1 (Gold Crown) */}
         {topThree[0] && (
-          <div className="p-7 rounded-3xl bg-gradient-to-b from-[#1c183d] via-[#10122d] to-[#0a0d24] border-2 border-yellow-500/60 flex flex-col items-center text-center space-y-3 sm:order-2 shadow-2xl shadow-yellow-900/20">
+          <div className="p-7 rounded-3xl glass-panel hud-corner border-2 border-yellow-500/70 flex flex-col items-center text-center space-y-3 sm:order-2 shadow-2xl shadow-yellow-900/30">
             <div className="relative">
               <Crown className="w-8 h-8 text-yellow-400 mx-auto mb-1 animate-bounce" />
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -152,7 +152,7 @@ export default function LeaderboardPage() {
       {/* ========================================================================= */}
       {/* 2. LEADERBOARD ROSTER TABLE */}
       {/* ========================================================================= */}
-      <div className="p-6 rounded-3xl bg-[#0d1029]/90 border border-indigo-900/40 space-y-3">
+      <div className="p-6 rounded-3xl glass-panel hud-corner space-y-3">
         <h3 className="text-xs font-extrabold uppercase tracking-wider text-slate-400">
           Tier Ladder Rankings
         </h3>
