@@ -116,8 +116,8 @@ interface StudyVerseContextType {
 
 const DEFAULT_PROFILE: UserProfile = {
   id: 'usr-scholar-1',
-  fullName: 'Ankit Sharma',
-  email: 'ankit@studyverse.ai',
+  fullName: 'ANKIT FAUJDAR',
+  email: 'ankitfaujdar2008@gmail.com',
   avatarUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150',
   targetExam: 'JEE Main',
   preparationLevel: 'Intermediate',
@@ -191,7 +191,13 @@ export const StudyVerseProvider: React.FC<{ children: React.ReactNode }> = ({ ch
     if (typeof window !== 'undefined') {
       try {
         const savedProfile = localStorage.getItem('studyverse_profile');
-        if (savedProfile) setProfile(JSON.parse(savedProfile));
+        if (savedProfile) {
+          const parsed = JSON.parse(savedProfile);
+          if (parsed.fullName === 'Ankit Sharma' || !parsed.fullName) {
+            parsed.fullName = 'ANKIT FAUJDAR';
+          }
+          setProfile(parsed);
+        }
         const savedQuests = localStorage.getItem('studyverse_quests');
         if (savedQuests) setQuests(JSON.parse(savedQuests));
         const savedCart = localStorage.getItem('studyverse_cart');

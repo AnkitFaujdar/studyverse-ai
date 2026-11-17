@@ -42,7 +42,7 @@ export default function StudyShopPage() {
   const [selectedProduct, setSelectedProduct] = useState<ProductItem | null>(null);
 
   // Checkout form
-  const [shippingName, setShippingName] = useState('Ankit Sharma');
+  const [shippingName, setShippingName] = useState('ANKIT FAUJDAR');
   const [street, setStreet] = useState('221B Baker St / Campus Hostel');
   const [city, setCity] = useState('New Delhi');
   const [zipCode, setZipCode] = useState('110001');
