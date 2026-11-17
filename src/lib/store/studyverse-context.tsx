@@ -118,7 +118,7 @@ const DEFAULT_PROFILE: UserProfile = {
   id: 'usr-scholar-1',
   fullName: 'ANKIT FAUJDAR',
   email: 'ankitfaujdar2008@gmail.com',
-  avatarUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150',
+  avatarUrl: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=150',
   targetExam: 'JEE Main',
   preparationLevel: 'Intermediate',
   dailyGoalMinutes: 180, // 3 hours
@@ -195,6 +195,9 @@ export const StudyVerseProvider: React.FC<{ children: React.ReactNode }> = ({ ch
           const parsed = JSON.parse(savedProfile);
           if (parsed.fullName === 'Ankit Sharma' || !parsed.fullName) {
             parsed.fullName = 'ANKIT FAUJDAR';
+          }
+          if (!parsed.avatarUrl || parsed.avatarUrl.includes('photo-1534528741775-53994a69daeb')) {
+            parsed.avatarUrl = 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=150';
           }
           setProfile(parsed);
         }

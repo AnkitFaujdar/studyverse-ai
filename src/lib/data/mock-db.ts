@@ -279,7 +279,7 @@ export const MOCK_GUILDS: Guild[] = [
       { id: 'm-1', userId: 'scholar-rahul', name: 'Rahul V.', avatarUrl: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=120', level: 9, currentXp: 2840, weeklyXp: 820, streak: 26, role: 'leader' },
       { id: 'm-2', userId: 'scholar-priya', name: 'Priya S.', avatarUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120', level: 8, currentXp: 2150, weeklyXp: 740, streak: 21, role: 'officer' },
       { id: 'm-3', userId: 'scholar-arjun', name: 'Arjun K.', avatarUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?w=120', level: 7, currentXp: 1680, weeklyXp: 690, streak: 18, role: 'member' },
-      { id: 'm-4', userId: 'user-demo', name: 'You (Aspirant)', avatarUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=120', level: 6, currentXp: 1050, weeklyXp: 540, streak: 17, role: 'member' },
+      { id: 'm-4', userId: 'user-demo', name: 'ANKIT FAUJDAR (You)', avatarUrl: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=120', level: 6, currentXp: 1050, weeklyXp: 540, streak: 17, role: 'member' },
     ],
   },
   {
@@ -323,19 +323,19 @@ export const MOCK_LEADERBOARDS: Record<'WEEK' | 'MONTH' | 'ALL TIME', Leaderboar
     { rank: 3, id: 'u-3', name: 'Vikram M.', avatarUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120', targetExam: 'JEE Advanced', level: 8, xp: 740, streak: 24, badge: 'Grandmaster' },
     { rank: 4, id: 'u-4', name: 'Priya S.', avatarUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120', targetExam: 'JEE Main', level: 8, xp: 690, streak: 21 },
     { rank: 5, id: 'u-5', name: 'Karthik N.', avatarUrl: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120', targetExam: 'GATE', level: 7, xp: 620, streak: 19 },
-    { rank: 6, id: 'user-demo', name: 'You (Aspirant)', avatarUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=120', targetExam: 'JEE Main', level: 6, xp: 540, streak: 17 },
+    { rank: 6, id: 'user-demo', name: 'ANKIT FAUJDAR (You)', avatarUrl: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=120', targetExam: 'JEE Main', level: 6, xp: 540, streak: 17 },
   ],
   MONTH: [
     { rank: 1, id: 'u-2', name: 'Ananya R.', avatarUrl: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=120', targetExam: 'NEET', level: 9, xp: 3410, streak: 32, badge: 'Mythic' },
     { rank: 2, id: 'u-1', name: 'Rahul V.', avatarUrl: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=120', targetExam: 'JEE Main', level: 9, xp: 3290, streak: 26, badge: 'Grandmaster' },
     { rank: 3, id: 'u-3', name: 'Vikram M.', avatarUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120', targetExam: 'JEE Advanced', level: 8, xp: 2980, streak: 24, badge: 'Grandmaster' },
-    { rank: 4, id: 'user-demo', name: 'You (Aspirant)', avatarUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=120', targetExam: 'JEE Main', level: 6, xp: 2240, streak: 17 },
+    { rank: 4, id: 'user-demo', name: 'ANKIT FAUJDAR (You)', avatarUrl: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=120', targetExam: 'JEE Main', level: 6, xp: 2240, streak: 17 },
   ],
   'ALL TIME': [
     { rank: 1, id: 'u-10', name: 'Devendra S.', avatarUrl: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=120', targetExam: 'UPSC', level: 10, xp: 6420, streak: 64, badge: '👑 LEGENDARY SCHOLAR' },
     { rank: 2, id: 'u-2', name: 'Ananya R.', avatarUrl: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=120', targetExam: 'NEET', level: 9, xp: 5120, streak: 32, badge: 'Mythic' },
     { rank: 3, id: 'u-1', name: 'Rahul V.', avatarUrl: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=120', targetExam: 'JEE Main', level: 9, xp: 4890, streak: 26, badge: 'Grandmaster' },
-    { rank: 8, id: 'user-demo', name: 'You (Aspirant)', avatarUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=120', targetExam: 'JEE Main', level: 6, xp: 1050, streak: 17 },
+    { rank: 8, id: 'user-demo', name: 'ANKIT FAUJDAR (You)', avatarUrl: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=120', targetExam: 'JEE Main', level: 6, xp: 1050, streak: 17 },
   ],
 };
 
